@@ -1,1 +1,399 @@
-
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOQ3GwXomZZ2gZAjUbdQRWq"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#**What is Python**"
+      ],
+      "metadata": {
+        "id": "6skiWsOZ70Tz"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Python is a high-level, interpreted, object-oriented programming language with easy to read syntax.\n",
+        "\n",
+        "It has various applications in fields like web development, data science, artifical intelligence, automations etc."
+      ],
+      "metadata": {
+        "id": "Zrl6PdNWtA-6"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#**Syntax and Semantics in Python**\n",
+        "\n",
+        "Syntax are the rules defining how python code should be written.\n",
+        "\n",
+        "Following are some of the rules we need to follow while writing our programs in python."
+      ],
+      "metadata": {
+        "id": "sOGaK5Hnszfl"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 1. Case-Sensitive:"
+      ],
+      "metadata": {
+        "id": "xBUE9IM-1Mvv"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gzeSaWQYst6M",
+        "outputId": "e84cc9f9-0312-4a28-e8ef-811317a28795"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Garima\n",
+            "Ruchi\n"
+          ]
+        }
+      ],
+      "source": [
+        "name = 'Garima'\n",
+        "Name = 'Ruchi'\n",
+        "\n",
+        "print(name)\n",
+        "print(Name)\n",
+        "\n",
+        "# name & Name - both are different"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 2. Intendation:"
+      ],
+      "metadata": {
+        "id": "v-t-2od41VYv"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# It is important while defining blocks of code like loops, functions, conditionals\n",
+        "\n",
+        "age = 15\n",
+        "if age>=18:\n",
+        "  print(age)       # this is inside 'if' block so when 'if-statement' is true then this print will get exceuted, otherwise when it's not true then it will be passed without printing.\n",
+        "\n",
+        "print(age)         # as 'age' is a global variable and it is defined outside the 'if' block, so it can be printed form anywhere.\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "izS4kfhvuLw6",
+        "outputId": "e401a50f-f61a-488a-c223-f3c8858a69bc"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 3. Comments:"
+      ],
+      "metadata": {
+        "id": "cT_u-RwP1ZoE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Single Line Comment: starts with (#) sign\n",
+        "# Multi Line Comment: written between (''' or \"\"\"\") signs\n",
+        "\n",
+        "# for example:\n",
+        "\n",
+        "# This is a single line comment\n",
+        "\n",
+        "\"\"\" This is a\n",
+        "Multi-line\n",
+        "comment \"\"\"\n",
+        "# It will be getting printed like this -  This is a\\nMulti-line\\ncomment"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "O8IBKPLru-ZE",
+        "outputId": "a940b61b-cb55-477e-a0ea-578faaf5a736"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "' This is a\\nMulti-line\\ncomment '"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 30
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 4. Line Continuation:"
+      ],
+      "metadata": {
+        "id": "4agWyBDF1e-C"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# To overcame the issue of getting everything printed in single go with (\\n) symbol, we can use a backslash(\\) to continue a statement.\n",
+        "\n",
+        "\"\"\" This is a \\\n",
+        "Multi-line \\\n",
+        "comment.\"\"\"\n",
+        "\n",
+        "# This comment is now gets printed,\n",
+        "# but if we'll add any code after this comment\n",
+        "# then this comment will not get printed and\n",
+        "# we'll directly get the output of the code.\n",
+        "# Check the next cell for example."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "nfHhMsLXwZUQ",
+        "outputId": "55feee07-ce66-4f38-caf7-9afbd4951043"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "' This is a Multi-line comment.'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 31
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# example 1:\n",
+        "x = \"Hello! \\\n",
+        "My name is Garima.\"\n",
+        "print(x)\n",
+        "\n",
+        "# example 2:\n",
+        "sum = 1+2+3+4+\\\n",
+        "5+6+7+8\n",
+        "print(sum)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d6Ca8HR2yLeM",
+        "outputId": "da167ef9-1171-4bc7-f831-8bed804b3dc2"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello! My name is Garima.\n",
+            "36\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 5. Multiple Statements on a Single Line:"
+      ],
+      "metadata": {
+        "id": "K7AjRkTB1hZx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# We can define multiple statements on a single line. for example:\n",
+        "\n",
+        "x=5; y=10; z=x+y\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aovcFUbk1Eot",
+        "outputId": "3078755a-1ab3-4bcf-e11d-584e74506e25"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Practical Code Exmaple of Indentation:"
+      ],
+      "metadata": {
+        "id": "ZRmOaOOl8cf1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if True:\n",
+        "    print(\"Correct Indentation - it will get printed\")\n",
+        "    if False:\n",
+        "        print(\"This will not print\")\n",
+        "    print(\"This will print\")\n",
+        "print(\"Outside the if-block - it will print\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yGD5Wop313BK",
+        "outputId": "ab5a7351-4f87-4629-eb42-3ad2a3968cb7"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Correct Indentation - it will get printed\n",
+            "This will print\n",
+            "Outside the if-block - it will print\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Explaination of the above Code Snippet:\n",
+        "1. First 'if' statement:\n",
+        "```\n",
+        "if True:\n",
+        "        print(\"Correct Indentation - it will get printed\")\n",
+        "```\n",
+        "This condition is always 'True', so the code inside this block will execute.\n",
+        "\n",
+        "2. Nested 'if' statement:\n",
+        "```\n",
+        "if False:\n",
+        "        print(\"This will not print\")\n",
+        "```\n",
+        "This condition is 'False', so the code inside this block will not execute. No output from this block.\n",
+        "\n",
+        "3. Second 'print' statement is inside the first 'if' block:\n",
+        "```\n",
+        "print(\"This will print\")\n",
+        "```\n",
+        "This line is not indented under the 'if False:' block, so it will execute regardless of the 'False' condition.\n",
+        "\n",
+        "4. Final 'print' statement outside the 'if' block:\n",
+        "```\n",
+        "print(\"Outside the if-block - it will print\")\n",
+        "```\n",
+        "This line is outside of the initial 'if True:' block, so it will always execute."
+      ],
+      "metadata": {
+        "id": "sZTahTZa5Pha"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Another Exmaple of Indentation:\n",
+        "if False:\n",
+        "    print(\"Print-1\")\n",
+        "    if True:\n",
+        "        print(\"Print-2\")\n",
+        "    print(\"Print-4\")\n",
+        "print(\"Print-5\")\n",
+        "\n",
+        "# first 'if-statment' is false, so none of its intented statements will execute.\n",
+        "# only the last print statement that is outsite the 'if-block' will get printed"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ybv4_8Bf6ZXr",
+        "outputId": "c1ab6222-572a-43a9-908f-2fb195d8a05b"
+      },
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Print-5\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
